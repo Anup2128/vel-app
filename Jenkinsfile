@@ -1,5 +1,10 @@
 pipeline{
-	agent any
+	agent{
+		label{
+			label'built-in'
+			customWorkspace'/mnt/deploy'
+		}
+	}
 	
 	stages{
 		stage('install-httpd'){
@@ -16,7 +21,7 @@ pipeline{
 		
 		stage('deply-index'){
 			steps{
-			sh " cp -r index.html /var/www/html"	
+			sh " cp -r /mnt/deploy/index.html /var/www/html"	
 			}
 		}
 		
