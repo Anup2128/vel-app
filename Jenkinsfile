@@ -22,7 +22,7 @@ pipeline{
 		
 		stage('permission-to-index'){
 			steps{
-				sh " chmod -R 777 * /var/www/html/index.html
+				sh " chmod -R 777 * /var/www/html/index.html"
 			}
 		}
 	}
